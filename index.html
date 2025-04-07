@@ -1,180 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VideOnline</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f2f2f2;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Cascata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
 
-    .container {
-      text-align: center;
-      max-width: 800px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
 
-    h1 {
-      color: #333;
-    }
+        .dropdown {
+            position: relative;
+            width: 200px;
+        }
 
-    .grid-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      margin-top: 15px;
-    }
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    .grid-links a {
-      text-decoration: none;
-      color: #0066cc;
-      font-weight: bold;
-      padding: 10px;
-      border: 2px solid #0066cc;
-      border-radius: 5px;
-      transition: 0.3s;
-      display: block;
-    }
+        .dropdown button:hover {
+            background: #0056b3;
+        }
 
-    .grid-links a:hover {
-      color: red;
-      border-color: red;
-      background-color: #ffe6e6;
-    }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-    .dropdown {
-      margin-top: 20px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
 
-    .dropdown-content {
-      display: none;
-      margin-top: 10px;
-    }
+        .dropdown-content a {
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            background: white;
+            text-align: center;
+            transition: color 0.2s;
+        }
 
-    .dropdown-content.show {
-      display: block;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #004999;
-    }
-  </style>
+        .dropdown-content a:hover {
+            background: #f1f1f1;
+            color: red;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>VideOnline</h1>
-    <p>Os links abaixo estão disponíveis na internet.</p>
-
-	  <div class="dropdown">
-      <button onclick="toggleMenu('menu1')">Belezal</button>
-      <div class="dropdown-content" id="menu1">
-        <div class="grid-links">
-          <!-- Seus links aqui -->
-			<a href="https://watch.brplayer.cc/watch?v=8CSY7TOV">01</a>
-			<a href="https://watch.brplayer.cc/watch?v=FG2I9XEP">02</a>
-			<a href="https://watch.brplayer.cc/watch?v=HU34OQS5">03</a>
-			<a href="https://watch.brplayer.cc/watch?v=ZATHDWQS">04</a>
-			<a href="https://watch.brplayer.cc/watch?v=KW1BLHN0">05</a>
-			<a href="https://watch.brplayer.cc/watch?v=W4FPH0IY">06</a>
-			<a href="https://watch.brplayer.cc/watch?v=U6QSE2FH">07</a>
-			<a href="https://watch.brplayer.cc/watch?v=08F9PIGX">08</a>
-			<a href="https://watch.brplayer.cc/watch?v=37QAOI6G">09</a>
-			<a href="https://watch.brplayer.cc/watch?v=3SVDEG2H">10</a>
-			<a href="https://watch.brplayer.cc/watch?v=0S98FRAX">11</a>
-			<a href="https://watch.brplayer.cc/watch?v=38FEUVKT">12</a>
-			<a href="https://watch.brplayer.cc/watch?v=6OHKBRNJ">13</a>
-			<a href="https://watch.brplayer.cc/watch?v=T8DB4127">14</a>
-			<a href="https://watch.brplayer.cc/watch?v=O5FBCNVK">15</a>
-			<a href="https://watch.brplayer.cc/watch?v=T9L8V3CO">16</a>
-			<a href="https://watch.brplayer.cc/watch?v=F5P2N7OR">17</a>
-			<a href="https://watch.brplayer.cc/watch?v=B6ET1H30">18</a>
-			<a href="https://watch.brplayer.cc/watch?v=2NJXLKOC">19</a>
-			<a href="https://watch.brplayer.cc/watch?v=HSOWUJ9Q">20</a>
-			<a href="https://watch.brplayer.cc/watch?v=GFVS0PLK">21</a>
-			<a href="https://watch.brplayer.cc/watch?v=2BN9ZLJ8">22</a>
-			<a href="https://watch.brplayer.cc/watch?v=XI1DSN8Z">23</a>
-			<a href="https://watch.brplayer.cc/watch?v=1T3XGQU5">24</a>
-			<a href="https://watch.brplayer.cc/watch?v=XZLNJSG3">25</a>
-			<a href="https://watch.brplayer.cc/watch?v=X51F2KAV">26</a>
-			<a href="https://watch.brplayer.cc/watch?v=USQJ2H4Y">27</a>
-			<a href="https://watch.brplayer.cc/watch?v=TWD3RGNB">28</a>
-			<a href="https://watch.brplayer.cc/watch?v=EURM4YKS">29</a>
-			<a href="https://watch.brplayer.cc/watch?v=PEXU3Q4C">30</a>
-			<a href="https://watch.brplayer.cc/watch?v=A0PNLETI">31</a>
-			<a href="https://watch.brplayer.cc/watch?v=HELJY1GA">32</a>
-			<a href="https://watch.brplayer.cc/watch?v=ZXFE2ODK">33</a>
-			<a href="https://watch.brplayer.cc/watch?v=AFIMD94E">34</a>
-			<a href="https://watch.brplayer.cc/watch?v=F63AQHMT">35</a>
-			<a href="https://watch.brplayer.cc/watch?v=KY9N0SDX">36</a>
-			<a href="https://watch.brplayer.cc/watch?v=P5BOUDWT">37</a>
-			<a href="https://watch.brplayer.cc/watch?v=DYNCR45P">38</a>
-			<a href="https://watch.brplayer.cc/watch?v=GIY28NJZ">39</a>
-			<a href="https://watch.brplayer.cc/watch?v=IHK3FGB2">40</a>
-          <!-- ... continue -->
+    <div class="container">
+        <div class="dropdown">
+            <button onclick="toggleMenu('menu1')">Beleza Fatal</button>
+            <div class="dropdown-content" id="menu1">
+                <div class="grid">
+                    <a href="https://watch.brplayer.cc/watch?v=8CSY7TOV" target="_blank">1</a>
+                    <a href="https://watch.brplayer.cc/watch?v=FG2I9XEP" target="_blank">2</a>
+                    <a href="https://watch.brplayer.cc/watch?v=HU34OQS5" target="_blank">3</a>
+                    <a href="https://watch.brplayer.cc/watch?v=ZATHDWQS" target="_blank">4</a>
+                    <a href="https://watch.brplayer.cc/watch?v=KW1BLHN0" target="_blank">5</a>
+                    <a href="https://watch.brplayer.cc/watch?v=W4FPH0IY" target="_blank">6</a>
+                    <a href="https://watch.brplayer.cc/watch?v=U6QSE2FH" target="_blank">7</a>
+                    <a href="https://watch.brplayer.cc/watch?v=08F9PIGX" target="_blank">8</a>
+                    <a href="https://watch.brplayer.cc/watch?v=37QAOI6G" target="_blank">9</a>
+                    <a href="https://watch.brplayer.cc/watch?v=3SVDEG2H" target="_blank">10</a>
+                    <a href="https://watch.brplayer.cc/watch?v=0S98FRAX" target="_blank">11</a>
+                    <a href="https://watch.brplayer.cc/watch?v=38FEUVKT" target="_blank">12</a>
+                    <a href="https://watch.brplayer.cc/watch?v=6OHKBRNJ" target="_blank">13</a>
+                    <a href="https://watch.brplayer.cc/watch?v=T8DB4127" target="_blank">14</a>
+                    <a href="https://watch.brplayer.cc/watch?v=O5FBCNVK" target="_blank">15</a>
+                    <a href="https://watch.brplayer.cc/watch?v=T9L8V3CO" target="_blank">16</a>
+                    <a href="https://watch.brplayer.cc/watch?v=F5P2N7OR" target="_blank">17</a>
+                    <a href="https://watch.brplayer.cc/watch?v=B6ET1H30" target="_blank">18</a>
+                    <a href="https://watch.brplayer.cc/watch?v=2NJXLKOC" target="_blank">19</a>
+                    <a href="https://watch.brplayer.cc/watch?v=HSOWUJ9Q" target="_blank">20</a>
+                    <a href="https://watch.brplayer.cc/watch?v=GFVS0PLK" target="_blank">21</a>
+                    <a href="https://watch.brplayer.cc/watch?v=2BN9ZLJ8" target="_blank">22</a>
+                    <a href="https://watch.brplayer.cc/watch?v=XI1DSN8Z" target="_blank">23</a>
+                    <a href="https://watch.brplayer.cc/watch?v=1T3XGQU5" target="_blank">24</a>
+                    <a href="https://watch.brplayer.cc/watch?v=XZLNJSG3" target="_blank">25</a>
+                    <a href="https://watch.brplayer.cc/watch?v=X51F2KAV" target="_blank">26</a>
+                    <a href="https://watch.brplayer.cc/watch?v=USQJ2H4Y" target="_blank">27</a>
+                    <a href="https://watch.brplayer.cc/watch?v=TWD3RGNB" target="_blank">28</a>
+                    <a href="https://watch.brplayer.cc/watch?v=EURM4YKS" target="_blank">29</a>
+                    <a href="https://watch.brplayer.cc/watch?v=PEXU3Q4C" target="_blank">30</a>
+                    <a href="https://watch.brplayer.cc/watch?v=A0PNLETI" target="_blank">31</a>
+                    <a href="https://watch.brplayer.cc/watch?v=HELJY1GA" target="_blank">32</a>
+                    <a href="https://watch.brplayer.cc/watch?v=ZXFE2ODK" target="_blank">33</a>
+                    <a href="https://watch.brplayer.cc/watch?v=AFIMD94E" target="_blank">34</a>
+                    <a href="https://watch.brplayer.cc/watch?v=F63AQHMT" target="_blank">35</a>
+                    <a href="https://watch.brplayer.cc/watch?v=KY9N0SDX" target="_blank">36</a>
+                    <a href="https://watch.brplayer.cc/watch?v=P5BOUDWT" target="_blank">37</a>
+                    <a href="https://watch.brplayer.cc/watch?v=DYNCR45P" target="_blank">38</a>
+                    <a href="https://watch.brplayer.cc/watch?v=GIY28NJZ" target="_blank">39</a>
+                    <a href="https://watch.brplayer.cc/watch?v=IHK3FGB2" target="_blank">40</a>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="dropdown">
+            <button onclick="toggleMenu('menu2')">Hellsing Ultimate</button>
+            <div class="dropdown-content" id="menu2">
+                <div class="grid">
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/1.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%201%20(SD)" target="_blank">1</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/2.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%202%20(SD)" target="_blank">2</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/3.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%203%20(SD)" target="_blank">3</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/4.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%204%20(SD)" target="_blank">4</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/5.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%205%20(SD)" target="_blank">5</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/6.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%206%20(SD)" target="_blank">6</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/7.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%207%20(SD)" target="_blank">7</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/8.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%208%20(SD)" target="_blank">8</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/9.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%209%20(SD)" target="_blank">9</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/10.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%2010%20(SD)" target="_blank">10</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/11.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%2011%20(SD)" target="_blank">11</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/12.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%2012%20(SD)" target="_blank">12</a>
+                    <a href="https://lightspeedst.net/s2/mp4/hellsing-ultimate/sd/13.mp4?type=video/mp4&title=[AnimeFire.plus]%20Hellsing%20Ultimate%20-%20Episódio%2013%20(SD)" target="_blank">13</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleMenu('menu3')">Invencível - 3</button>
+            <div class="dropdown-content" id="menu3">
+                <div class="grid">
+                    <a href="https://watch.brplayer.cc/watch?v=EVP1CYTX" target="_blank">1</a>
+                    <a href="https://watch.brplayer.cc/watch?v=DC2AQW5H" target="_blank">2</a>
+                    <a href="https://watch.brplayer.cc/watch?v=YRDWQMNK" target="_blank">3</a>
+                    <a href="https://watch.brplayer.cc/watch?v=NE65MAD9" target="_blank">4</a>
+                    <a href="https://watch.brplayer.cc/watch?v=C8JH265U" target="_blank">5</a>
+                    <a href="https://watch.brplayer.cc/watch?v=PKORFZG2" target="_blank">6</a>
+                    <a href="https://watch.brplayer.cc/watch?v=AMTK0329" target="_blank">7</a>
+                    <a href="https://watch.brplayer.cc/watch?v=6Z5N39CT" target="_blank">8</a>
+                    <a href="https://watch.brplayer.cc/watch?v=GK0RD5S9" target="_blank">9</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleMenu('menu4')">Shangri-Lá 2</button>
+            <div class="dropdown-content" id="menu4">
+                <div class="grid">
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dycJG7n1DttTTugTzZa21koCPdAn5g3q-_N3E8MFGeXs1ZBniP67YiTUmo6q2muDQVcuwDQ-O3aDbhkn3Il_kmYsbHgaDvteqwm7gZkKx5e-G0XTgkoNvN-fYqq_luTjV9npFaa" target="_blank">1</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dxbRNRbiuLPh3LY4pR4i5T_7SdNyx77XQYzfz1G-IaqY3Rjw15n4KJnu6v4zxj4J_DUGRT0I4uAbfwBN_mRoMmtQYeRD7OKmBCUmMolPbUS2p7G44b6G4MhJSv-X-w_DaWKb-5t" target="_blank">2</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwP3qWV1b0hoyJU5jqUBcUOCoeUEDntgNq2o1c8uLJGmrYyvEuruIJ3UW3bax6_rXW-yrYMRXQAVB0bHbT1bGLycKzPQgjqfg447TnjH9dqA0j08NVW6D5KuALW_DHd3BW2M5c" target="_blank">3</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dy8BnI0aIJg2s26vjRLtHwIaok0q8ua3x_4vDdD42QhvWW31BkAt1SfcIWmC9gCRtFF6iXWyKIm5w7wQlnIttzT_NcEpIWInogfazV6hCAFtPrcOadmDkSHUfsm6kZM4oktVC4g" target="_blank">4</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dy3XLbKUtAhePO9ahWqKHHDB9-G-75_tecy9wLWpKtsHxSCrS-GrCG03OeZzK157UrzVGHZwAhH4Wy91sHTi9yIsJFUcjihFeoHET3DLmZHxXJdOttlTF4tqzWfla003-K7mA" target="_blank">5</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dyrktaFHSc5zCSe1iePquWpmTs26LCUVkp-imBb8He2bwXwKPNx4Q4uRMuCBSJLJLSi4AhRCAf2nD3hpX1xzhufU6F0B8Q0FXCQEULZ0lFymFzdGPW-4PRk35blFKUe-O2OTuNl" target="_blank">6</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwcmYBzqQyxpJ59nICMC1FayHAxul0eil5Y6LWWq8xsEvLMoDs3Db_h2wIgJvom9yGQ8Dhgzx5eFn_QbRFQEAGwX2pREL7JuJTIJ0EUJwj8ka_hiN39or8TexChfMh2bme1fiE" target="_blank">7</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzHQhN11mm5tx3vtZrxvlEDqUgwkT7vzRVF7opSDsDe5A5Qx-RoDothWJ3GiYoCDep9_lHbDgDrQAXpacRSw56XrMd0sT2D_XEcwJmQQBWpcuPxyL9NVJO3H3YPp4_izNSVT1I" target="_blank">8</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwz1RtL4cXmFpTXEjektSTU5bQnuJM5xx9RElcHKI_NFiEBkOMHc8RNrSG2CxdaVgaGog20sY8sE9zoXF_3RP-SmoEHVDvAab7gx_OhMGqfqHTzzx6itCJRXJSy7uawKZXF4qg" target="_blank">9</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzqL1FoeaoLQGOQOb6YjtPsYviCckbjyaSGW5uAf2vvLYhTTTV8VcBCeF0u_gTF4ceSI0GFrADyb57_RKJe-WHKHJIP2pc_yu7-JsTvCpQZDz8Pb3AD-8K8GLKq7DkJ_pYNgMbx" target="_blank">10</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwZUS0f_Yisf0aNMhYW2ryW29pn3nL_SreaeZ9Zl7qwe8PRz2p_u5kN1-lb2jF69w0yxT26WkkIl8qKwD6xff6EsWU0jO1qGPVDTPX1V1c0BTkAGIb_EqEaeqAsJP99AUnPN4cl" target="_blank">11</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dxNbjW3Zob7h2iMlqyBPlxXrYr5e7kGaQc27sMGxp57MJHgkjnLoxRCi_bpP2OGGh1OIQw0q2vOJtUBVZi0ba7vuYL7tUN5zxhyA5tfKrg19jHqWwoZoIFJSFCNKfiN9WzpcYix" target="_blank">12</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dypBvR8gNCPB6CXIxvJ09fS6oMDB4PKa6Dauo8NgHQjKWA0rgy7L_9Lu1_fPJA3qpau_yAzxr7dElpdmZCNO47UfDtM5481Dlon5VZfm6x6jDnX-WRnYieXgvqSimmkUUlryfg" target="_blank">13</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dyRTbn7cP0evMCoSHp9XnQ4ym6RozP4g-GSguEt9GKY4Fquk-eYmhW2WoJpKoUxWOGaShqQPAqEKLCXuryDHbXxhaB5L1vbxUK8CzKxryFN1nR0LfF33YWq5mmRQGZkHHGyOww" target="_blank">14</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzi36xnc1NnzSacgkSMlPx6gQdKp5LmME7TLX3QphVnV85niiw7vbgIuwiwZ8hD5zBSDxY3XpggXGduNsO8tAEv3GBOXxM-UamBe6DZQYl3mOmgXulcTxdwcZENe9pUHKW1BMyt" target="_blank">15</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dw9P2xCStd_OkotySbsYWxgY54_0ZoBn0OChBYeE87JuzOoUiMnX9mS56PeO7s2ewhkxnYMZqgLWBUAdCD-jcSEkzA_lb0iglxNVOTt2S9GUxM8OEOCvM0dhY_XIIzKTBWcw17a" target="_blank">16</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dx98bSZ0e6fCQg1cX_elmrpwJVqagPu_rOGzGxdHc5-SbSStVG8QOvrykYXf98wWOzImv7ZI-UprjtSkDr9Nu65MaDdo0z64lNq1uONtn24BAragrPb4GKoOGUyehEx55Ib43xM" target="_blank">17</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dxcvxyIHgFL_ekxLKc2CWNwA7Pe0e0LxsYoYrCGSRl_BIU84FJ6BflaAknhQJg5yjj_6233Y4V2d3QK_TDhSK4sG52yPxMJ6MEqSt9L6PBkB7oxqAoMBABazj8eqfALxNbjwcUk" target="_blank">18</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dxzNpafH9CpNLwG0x6YaxCCJy6tn05DbRa2CdZna52PGXaXoiHAiyNfLQrvdPJYGrht6jn8rSFNxFJfs12BhOP07GLKj1_AI0SJuIRXAaVbQTrLNbtFkyn7jL5Kn59Xoh2THgs" target="_blank">19</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dy-rW42Z4_q1zA2r5o0_GBnIEwXxSGcBaR4LWiZaGgEs8665BlJaRJAfdoMFKsY-EKCQGY5A2gq_DPgi1BW2pCcjhfeTbs-hZhAAfnUy_0gtiyudiyQXW6m2uth9eBXvqTlxHX0" target="_blank">20</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwpvwdb7jchGjlWVT6pCVu_GByBXp1JcAEB_4GGtownK7_U-Bs4c7XriQh5eTU3FOnAa9L73s5KwuD_hxXAv41CO4NJ9fRZhg8LeQWafu9-hgoUSEI6lku2qwruIvk5UI2Fxmk" target="_blank">21</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dz7M_DOYWQe6bu0fPY0QTcdfxO7gd4EHOfzeQFLri_voIPv1L04sBsrOtFJa8-GnZFO9qr6VazuHpkLvdbXLI0EQWpPiEru6QUMObADDdyhxfnYGjeRvN8vtHystr7cNdHeSx4" target="_blank">22</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dx54WFEJiEdfNHJPypGFd9bK1uYJyad7KD4S9jj9df3TQGotUTR9RpyDJxxPkFP-jrGbL5KAz9JhHyKjNR2kGz8sGXTO4UBMB7RNISTiv8yH0iPBViVa35MDa_noJtxCBo0Je54" target="_blank">23</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleMenu('menu5')">Solo Leveling</button>
+            <div class="dropdown-content" id="menu5">
+                <div class="grid">
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dxL809oNr6LfhPd1zWY-4z6qpatxy2eEXXr2gtavJYBjiIcfB3CsU12X8gQ5EDJsc8dajxQbqNwonPlWgJuLZVtnwNyXOkliNJndKIusiS8rRb9S8ZYd7jXhZwap6ETt9m53ne1" target="_blank">1</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwWwdsNFNPq72Fe29sHqyxPzutWkvEdbjq_9JexPkTTbOTOdDu_CVwNqYSdQSmtqHf6YPoP6LcuKZPr-GqnXQfU-qcdQJ1ekljqxufBTgDxfF9HSZZutsTqjBK-Q0f9mjz8-tE" target="_blank">2</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzOshr_gT8sJpz7v645qKfZOtflW6Y68GhViAjuk9Xbjbj7oqdXeuZJ3lZEEKb37TvUBq9k8_RJy5ds6fDIXJMzVDQ5YoH-46v_r0u7sc5V153d9O9UnR584YCb0MQ9vTLC-IkD" target="_blank">3</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dybnxdsetOuPjvHHv2HJEPMElTbNx6l9VU72uLXi4ZoE-hTwmTvPoSKxJ178BuJD2jwhDKEvb3BJPgMNw_fUyaRBQOP8I2nWvSbJw7dyEPVvvWrGzIVdpeG08WkzEB_i5ZmNhE" target="_blank">4</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzbP69D6TzILu2FqrWfCDI5X4kOldzBf8ZhEfZV0rBtGpCIsk8-1rz6MBjANBSgDrIE9D54dcHzjmv80T2EJkT3iecmqJ2qxkQ-PJkDv-h-u4zdUkYzpoMrkytC6V0WJd32_cRh" target="_blank">5</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dzDiNwDxPEI24jzIZsEBLCL1pxkFPYzXljKFzu5My74VyH-8xh_sLmoOMuNEpYRZUZESy6BHYHMH2vFr3t8Mb_pMQWEz_luiGGjlSaF4WRd4BuuXXOmnwG2W0rRkSymRs6y5Woj" target="_blank">6</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dx2JiCIYalWEXqwAgFMtUdgwf__VkabpwlsbRXIdn5fAXbI7Vq-Akov3mrZJ83Dpfm-de7Nm5i3-yhKQfb7RkvCm-Gyi8r8GCilsmwYPRbh-cGTpnb0v79s9ZlrWjIzD1aZ_P2i" target="_blank">7</a>
+                    <a href="https://www.blogger.com/video.g?token=AD6v5dwRloRV5AzS-RkrMvcnV3p79p-ONhM1e7sfXXBVF2byBDvZeacQfZtNtURdHyCzj3eerWmIDzrqgtCOl_gpwstRD_5mC5IlIeuuQJgAK1Kv0PFMrvjdVhykUqILoGRNuHAbrx4" target="_blank">8</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="dropdown">
-      <button onclick="toggleMenu('menu2')">Shangri-Lá Frontier 2</button>
-      <div class="dropdown-content" id="menu2">
-        <div class="grid-links">
-          <!-- Seus links aqui -->
-          	<a href="https://www.blogger.com/video.g?token=AD6v5dycJG7n1DttTTugTzZa21koCPdAn5g3q-_N3E8MFGeXs1ZBniP67YiTUmo6q2muDQVcuwDQ-O3aDbhkn3Il_kmYsbHgaDvteqwm7gZkKx5e-G0XTgkoNvN-fYqq_luTjV9npFaa">1</a>
-		<a href="https://www.blogger.com/video.g?token=AD6v5dxbRNRbiuLPh3LY4pR4i5T_7SdNyx77XQYzfz1G-IaqY3Rjw15n4KJnu6v4zxj4J_DUGRT0I4uAbfwBN_mRoMmtQYeRD7OKmBCUmMolPbUS2p7G44b6G4MhJSv-X-w_DaWKb-5t">2</a>
-		<a href="https://www.blogger.com/video.g?token=AD6v5dwP3qWV1b0hoyJU5jqUBcUOCoeUEDntgNq2o1c8uLJGmrYyvEuruIJ3UW3bax6_rXW-yrYMRXQAVB0bHbT1bGLycKzPQgjqfg447TnjH9dqA0j08NVW6D5KuALW_DHd3BW2M5c">3</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dy8BnI0aIJg2s26vjRLtHwIaok0q8ua3x_4vDdD42QhvWW31BkAt1SfcIWmC9gCRtFF6iXWyKIm5w7wQlnIttzT_NcEpIWInogfazV6hCAFtPrcOadmDkSHUfsm6kZM4oktVC4g">4</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dy3XLbKUtAhePO9ahWqKHHDB9-G-75_tecy9wLWpKtsHxSCrS-GrCG03OeZzK157UrzVGHZwAhH4Wy91sHTi9yIsJFUcjihFeoHET3DLmZHxXJdOttlTF4tqzWfla003-K7mA">5</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dyrktaFHSc5zCSe1iePquWpmTs26LCUVkp-imBb8He2bwXwKPNx4Q4uRMuCBSJLJLSi4AhRCAf2nD3hpX1xzhufU6F0B8Q0FXCQEULZ0lFymFzdGPW-4PRk35blFKUe-O2OTuNl">6</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dwcmYBzqQyxpJ59nICMC1FayHAxul0eil5Y6LWWq8xsEvLMoDs3Db_h2wIgJvom9yGQ8Dhgzx5eFn_QbRFQEAGwX2pREL7JuJTIJ0EUJwj8ka_hiN39or8TexChfMh2bme1fiE">7</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dzHQhN11mm5tx3vtZrxvlEDqUgwkT7vzRVF7opSDsDe5A5Qx-RoDothWJ3GiYoCDep9_lHbDgDrQAXpacRSw56XrMd0sT2D_XEcwJmQQBWpcuPxyL9NVJO3H3YPp4_izNSVT1I">8</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dwz1RtL4cXmFpTXEjektSTU5bQnuJM5xx9RElcHKI_NFiEBkOMHc8RNrSG2CxdaVgaGog20sY8sE9zoXF_3RP-SmoEHVDvAab7gx_OhMGqfqHTzzx6itCJRXJSy7uawKZXF4qg">9</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dzqL1FoeaoLQGOQOb6YjtPsYviCckbjyaSGW5uAf2vvLYhTTTV8VcBCeF0u_gTF4ceSI0GFrADyb57_RKJe-WHKHJIP2pc_yu7-JsTvCpQZDz8Pb3AD-8K8GLKq7DkJ_pYNgMbx">10</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dwZUS0f_Yisf0aNMhYW2ryW29pn3nL_SreaeZ9Zl7qwe8PRz2p_u5kN1-lb2jF69w0yxT26WkkIl8qKwD6xff6EsWU0jO1qGPVDTPX1V1c0BTkAGIb_EqEaeqAsJP99AUnPN4cl">11</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dxNbjW3Zob7h2iMlqyBPlxXrYr5e7kGaQc27sMGxp57MJHgkjnLoxRCi_bpP2OGGh1OIQw0q2vOJtUBVZi0ba7vuYL7tUN5zxhyA5tfKrg19jHqWwoZoIFJSFCNKfiN9WzpcYix">12</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dypBvR8gNCPB6CXIxvJ09fS6oMDB4PKa6Dauo8NgHQjKWA0rgy7L_9Lu1_fPJA3qpau_yAzxr7dElpdmZCNO47UfDtM5481Dlon5VZfm6x6jDnX-WRnYieXgvqSimmkUUlryfg">13</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dyRTbn7cP0evMCoSHp9XnQ4ym6RozP4g-GSguEt9GKY4Fquk-eYmhW2WoJpKoUxWOGaShqQPAqEKLCXuryDHbXxhaB5L1vbxUK8CzKxryFN1nR0LfF33YWq5mmRQGZkHHGyOww">14</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dzi36xnc1NnzSacgkSMlPx6gQdKp5LmME7TLX3QphVnV85niiw7vbgIuwiwZ8hD5zBSDxY3XpggXGduNsO8tAEv3GBOXxM-UamBe6DZQYl3mOmgXulcTxdwcZENe9pUHKW1BMyt">15</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dw9P2xCStd_OkotySbsYWxgY54_0ZoBn0OChBYeE87JuzOoUiMnX9mS56PeO7s2ewhkxnYMZqgLWBUAdCD-jcSEkzA_lb0iglxNVOTt2S9GUxM8OEOCvM0dhY_XIIzKTBWcw17a">16</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dx98bSZ0e6fCQg1cX_elmrpwJVqagPu_rOGzGxdHc5-SbSStVG8QOvrykYXf98wWOzImv7ZI-UprjtSkDr9Nu65MaDdo0z64lNq1uONtn24BAragrPb4GKoOGUyehEx55Ib43xM">17</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dxcvxyIHgFL_ekxLKc2CWNwA7Pe0e0LxsYoYrCGSRl_BIU84FJ6BflaAknhQJg5yjj_6233Y4V2d3QK_TDhSK4sG52yPxMJ6MEqSt9L6PBkB7oxqAoMBABazj8eqfALxNbjwcUk">18</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dxzNpafH9CpNLwG0x6YaxCCJy6tn05DbRa2CdZna52PGXaXoiHAiyNfLQrvdPJYGrht6jn8rSFNxFJfs12BhOP07GLKj1_AI0SJuIRXAaVbQTrLNbtFkyn7jL5Kn59Xoh2THgs">19</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dy-rW42Z4_q1zA2r5o0_GBnIEwXxSGcBaR4LWiZaGgEs8665BlJaRJAfdoMFKsY-EKCQGY5A2gq_DPgi1BW2pCcjhfeTbs-hZhAAfnUy_0gtiyudiyQXW6m2uth9eBXvqTlxHX0">20</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dz7M_DOYWQe6bu0fPY0QTcdfxO7gd4EHOfzeQFLri_voIPv1L04sBsrOtFJa8-GnZFO9qr6VazuHpkLvdbXLI0EQWpPiEru6QUMObADDdyhxfnYGjeRvN8vtHystr7cNdHeSx4">21</a>
-							<a href="https://www.blogger.com/video.g?token=AD6v5dx54WFEJiEdfNHJPypGFd9bK1uYJyad7KD4S9jj9df3TQGotUTR9RpyDJxxPkFP-jrGbL5KAz9JhHyKjNR2kGz8sGXTO4UBMB7RNISTiv8yH0iPBViVa35MDa_noJtxCBo0Je54">22</a> 
-          <!-- ... continue -->
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+        function toggleMenu(id) {
+            let menu = document.getElementById(id);
+            let allMenus = document.querySelectorAll('.dropdown-content');
+            allMenus.forEach(m => {
+                if (m !== menu) m.style.display = 'none';
+            });
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
 
-
-  <script>
-    function toggleMenu(id) {
-      const menu = document.getElementById(id);
-      menu.classList.toggle("show");
-    }
-  </script>
+        document.addEventListener('click', function(event) {
+            if (!event.target.matches('button')) {
+                document.querySelectorAll('.dropdown-content').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
